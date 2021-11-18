@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company</title>
+    <link rel="stylesheet" href="../css/company.css" />
+    <link rel="icon" type="image/png" href="../images/Monkeyfavicon.png" />
+  </head>
+  <body>
+    <div class="menu-wrapper">
+      <a href="../index.html" onclick="window.location.href='../index.html'">
+        <div class="logo"><img src="../images/MonkeyLogo.png" /></div>
+      </a>
+      <div class="menu-link-wrapper">
+        <div class="menu-link" onclick="window.location.href='../index.html'">
+          Home
+        </div>
+        <div class="menu-link">About</div>
+        <div class="menu-link">Get Money</div>
+        <div class="menu-link">FAQ</div>
+        <div class="menu-link">Contact</div>
+      </div>
+    </div>
+    <div id="ticker-wrapper">
+      <div id="tickerPrime"></div>
+      <div id="tickerSecond"></div>
+    </div>
+    <div class="page-wrapper">
+      <div class="company-profile-wrapper">
+        <div class="company-profile-header">
+          <div class="company-logo" id="company-logo"></div>
+          <div class="company-title-wrapper">
+            <div class="company-stock-symbol" id="company-stock-symbol"></div>
+            <div class="company-title" id="company-title"></div>
+            <hr class="line-break" />
+          </div>
+        </div>
+        <div class="company-profile-details">
+          <div class="company-numbers">
+            <div class="stock-price-wrapper">
+              <div class="stock-price" id="price"></div>
+              <div class="stock-price-change" id="changesPercentage"></div>
+            </div>
+            <div class="chart" id="chart">
+              <canvas
+                id="myChart"
+                class="canvas"
+                width="400"
+                height="400"
+              ></canvas>
+            </div>
+            <div class="calendar-button-wrapper">
+              <label class="datetext" for="start">Start:</label>
+
+              <input
+                type="date"
+                id="startDate"
+                name="trip-start"
+                value="2021-01-01"
+                min="1900-01-01"
+                class="datepicker"
+              />
+              <label class="datetext" for="start">End:</label>
+
+              <input
+                type="date"
+                id="endDate"
+                name="trip-start"
+                value="2021-12-01"
+                min="1900-01-01"
+                class="datepicker"
+              />
+            </div>
+          </div>
+          <div class="company-text">
+            <div class="company-description-title">About</div>
+            <div class="company-description" id="company-description"></div>
+            <hr class="line-break" />
+            <div class="company-specs-wrapper">
+              <div class="company-row-wrapper">
+                <div class="company-specs-title">CEO</div>
+                <div class="company-specs-input" id="company-ceo"></div>
+              </div>
+              <div class="company-row-wrapper">
+                <div class="company-specs-title">WEBSITE</div>
+                <div class="company-specs-input" id="company-website"></div>
+              </div>
+              <div class="company-row-wrapper">
+                <div class="company-specs-title">ADDRESS</div>
+                <div class="company-specs-input" id="company-address"></div>
+              </div>
+              <div class="company-row-wrapper">
+                <div class="company-specs-title">EMPLOYEES</div>
+                <div class="company-specs-input" id="employees"></div>
+              </div>
+              <div class="company-row-wrapper">
+                <div class="company-specs-title">CREATED</div>
+                <div class="company-specs-input" id="created"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../js/company.js"></script>
+    <script src="../js/Marquee.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monkey Stocks</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" type="image/png" href="./images/Monkeyfavicon.png" />
+  </head>
+  <body>
+    <div class="menu-wrapper">
+      <a href="index.html" onclick="window.location.href='index.html'">
+        <div class="logo"><img src="./images/MonkeyLogo.png" /></div>
+      </a>
+      <div class="menu-link-wrapper">
+        <div class="menu-link" onclick="window.location.href='index.html'">
+          Home
+        </div>
+        <div class="menu-link">About</div>
+        <div class="menu-link">Wallet</div>
+        <div class="menu-link">Compare</div>
+        <div class="menu-link">Download</div>
+      </div>
+    </div>
+    <div id="marquee"></div>
+    <div class="page-wrapper">
+      <header class="header" id="header">
+        <h2 class="header-title">Search for Monkey Stocks</h2>
+        <div id="searchForm"></div>
+      </header>
+      <div class="results-wrapper" id="results-wrapper"></div>
+    </div>
+    <script src="./js/api.js"></script>
+    <script src="./js/Marquee.js"></script>
+    <script src="./js/SearchForm.js"></script>
+    <script src="./js/SearchResult.js"></script>
+    <script>
+      (async function () {
+        const marquee = new Marquee(document.getElementById("marquee"));
+        marquee.load();
+        const searchForm = new SearchForm(
+          document.getElementById("searchForm")
+        );
+        const results = new SearchResults(
+          document.getElementById("results-wrapper")
+        );
+
+        searchForm.onSearch((companies) => {
+          results.renderResults(companies);
+        });
+      })();
+    </script>
+  </body>
+</html>
